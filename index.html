@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="葵橋" />
+        <title>葵橋</title>
+        <link rel="icon" href="./imgs/icon.svg" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap"
+            rel="stylesheet"
+            media="print"
+            onload="this.media='all'"
+            blocking="render" />
+        <style>
+            :root {
+                --text-color: #e0e0e0;
+                --bg-color: #1a1c1e;
+            }
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                font-family: "Helvetica", "Arial", "Noto Sans SC", sans-serif;
+                line-height: 1.6;
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+                background-image: url("./imgs/background.webp");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+
+            body::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                /* 模拟专辑封面色调 */
+                background: rgba(66, 103, 254, 0.4);
+                mix-blend-mode: overlay; /* 混合模式 */
+                pointer-events: none; /* 允许点击穿透 */
+            }
+
+            .container {
+                width: 90%;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 2rem 1rem 0;
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                position: relative;
+            }
+
+            .aoibashi {
+                height: 60vh;
+                margin-bottom: 2rem;
+            }
+
+            .footer {
+                padding: 1rem;
+                text-align: center;
+                font-size: 0.8rem;
+                color: var(--text-color);
+                width: 100%;
+                z-index: 1;
+                opacity: 0.7;
+            }
+
+            .footer a {
+                color: var(--text-color);
+                text-decoration: none;
+            }
+
+            .gongan {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.15rem;
+            }
+
+            .gonganIcon {
+                width: 0.8rem;
+                height: 0.8rem;
+                object-fit: contain;
+                transform: translateY(-0.04rem);
+            }
+
+            .musicPlayer {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                width: 310px;
+                height: 150px;
+                overflow: hidden;
+                border-radius: 10px;
+                z-index: 1;
+                transform: scale(0.8);
+                transform-origin: bottom right;
+            }
+
+            @media (max-width: 870px) {
+                .aoibashi {
+                    height: 60vh;
+                }
+
+                .footer {
+                    font-size: 0.6rem;
+                }
+
+                .gongan {
+                    gap: 0.1rem;
+                }
+
+                .gonganIcon {
+                    width: 0.6rem;
+                    height: 0.6rem;
+                    object-fit: contain;
+                    transform: translateY(-0.02rem);
+                }
+
+                .musicPlayerContainer {
+                    display: flex;
+                    width: 155px;
+                    height: 75px;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .musicPlayer {
+                    position: static;
+                    width: 310px;
+                    height: 150px;
+                    overflow: hidden;
+                    border-radius: 10px;
+                    z-index: 1;
+                    transform: scale(0.5);
+                    transform-origin: center;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <img
+                src="./imgs/aoibashi.svg"
+                alt="葵橋"
+                class="aoibashi"
+                fetchpriority="high" />
+            <div class="musicPlayerContainer">
+                <iframe
+                    allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
+                    frameborder="0"
+                    class="musicPlayer"
+                    sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+                    src="https://embed.music.apple.com/jp/song/%E8%91%B5%E6%A9%8B/1536031580"></iframe>
+            </div>
+        </div>
+        <footer class="footer" lang="zh-CN">
+            <!-- <p>
+                <a href="https://beian.miit.gov.cn/" target="_blank"
+                    >某ICP备12345号-1</a
+                >
+            </p>
+            <p class="gongan">
+                <img
+                    class="gonganIcon"
+                    src="/imgs/gonganIcon.webp"
+                    alt="公安徽标" />
+                <a
+                    href="https://beian.mps.gov.cn/#/query/webSearch?code=12345"
+                    target="_blank"
+                    >某公网安备12345号</a
+                >
+            </p> -->
+            <p>
+                背景图片来自
+                <a
+                    href="https://unsplash.com/ja/%E5%86%99%E7%9C%9F/%E6%99%B4%E3%82%8C%E3%81%9F%E6%97%A5%E3%81%AE%E5%BB%BA%E7%89%A9%E3%81%A7%E3%81%84%E3%81%A3%E3%81%B1%E3%81%84%E3%81%AE%E8%A1%97%E3%81%AE%E3%82%B9%E3%82%AB%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%B3-kW0SBoPYf24"
+                    >Unsplash</a
+                >, 由
+                <a href="https://unsplash.com/ja/@lifeof_peter_" target="_blank"
+                    >Peter Thomas</a
+                >
+                拍摄
+            </p>
+        </footer>
+    </body>
+</html>
